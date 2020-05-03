@@ -11,7 +11,7 @@ following:
 
 * Check for no byte-compiler warnings.
 * Run
-  [Checkdoc](https://www.gnu.org/software/emacs/manual/html_node/elisp/Tips.html)
+  [Checkdoc](https://www.gnu.org/software/emacs/manual/html_node/elisp/Tips.html).
 * Check for no lines longer than 79 characters. [Why
   79?](https://www.reddit.com/r/learnpython/comments/1h2eug/pep_8_why_is_the_character_limit_79_and_not_80/)
 * Check that the code is indented correctly.
