@@ -3,11 +3,48 @@
 This repository has some handy instructions on contributing to my
 open-source projects.
 
+## Linters
+
+Most of my projects include automated linters to improve code quality.
+Run them locally with `make lint`. Typically this will do the
+following:
+
+* Check for no byte-compiler warnings.
+* Run
+  [Checkdoc](https://www.gnu.org/software/emacs/manual/html_node/elisp/Tips.html)
+* Check for no lines longer than 79 characters. [Why
+  79?](https://www.reddit.com/r/learnpython/comments/1h2eug/pep_8_why_is_the_character_limit_79_and_not_80/)
+* Check that the code is indented correctly.
+* Update the table of contents in the README. *Please install
+  [markdown-toc](https://www.npmjs.com/package/markdown-toc) for this
+  to work!*
+
+The linters are run automatically against your pull request by
+[CircleCI](https://circleci.com/). All pull requests must pass CI
+before being merged.
+
+One reason the CI can fail even though `make lint` worked for you is
+that your code doesn't work in an older version of Emacs. CircleCI
+runs the linters against every supported version of Emacs. You can do
+the same by installing [Docker](https://www.docker.com/) and running
+`make docker VERSION=25.3` (or equivalently for whatever version is of
+interest). That will put you in a shell with the project source code
+and all dependencies automatically installed in a sandbox.
+
+## Documentation
+
+We write documentation. Every symbol, public or private, needs a
+docstring which is enough to fully understand the behavior without
+inspecting the source code. Every public symbol (the ones without `--`
+in their name) needs furthermore to be explained in the README.
+
 ## How to write a changelog
 
-The idea of the CHANGELOG.md file is to document *user-visible*
-changes to the project in a *user-readable* way (unlike the commit
-history, which is much more detailed and hard to read).
+We also write changelogs. The changelog is kept in `CHANGELOG.md`.
+
+The idea of the changelog is to document *user-visible* changes to the
+project in a *user-readable* way (unlike the commit history, which is
+much more detailed and hard to read).
 
 Here is a changelog in progress:
 
